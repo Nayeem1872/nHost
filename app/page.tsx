@@ -13,20 +13,19 @@ export default function Home() {
 
   // console.log("user",email);
   // console.log("pass",password);
-  
 
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-  
-    try {
-      const data ={
-        username:email,
-        password:password,
-      }
 
-console.log("data",data);
+    try {
+      const data = {
+        username: email,
+        password: password,
+      };
+
+      console.log("data", data);
 
       const response = await axios.post("/api/login", data);
       // Handle successful login, e.g., redirect to dashboard
@@ -39,6 +38,10 @@ console.log("data",data);
     } catch (error) {
       setError("Invalid email or password");
     }
+  };
+  const handleLoginWithNIam = () => {
+    // router.push("http://192.168.0.110:3000/sso?next=http://localhost:3000/");
+    router.push("/niamsso?token=54545448685464564");   // Adjust the route as needed
   };
 
   return (
@@ -81,7 +84,15 @@ console.log("data",data);
                 Login
               </Button>
             </div>
+
+            
           </form>
+          <Button
+              className="w-full bg-slate-300 mt-4 text-black hover:bg-slate-100"
+              onClick={handleLoginWithNIam}
+            >
+              Login with nIam
+            </Button>
         </div>
       </div>
       <div className="hidden bg-muted lg:block">
