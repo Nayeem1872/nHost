@@ -59,3 +59,68 @@
       @apply bg-background text-foreground;
     }
   }
+
+
+  @keyframes circle7124 {
+    0% {
+      top: 60px;
+      height: 5px;
+      border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+    }
+    40% {
+      height: 20px;
+      border-radius: 50%;
+      transform: scaleX(1);
+    }
+    100% {
+      top: 0%;
+    }
+  }
+  
+  @keyframes shadow046 {
+    0% {
+      transform: scaleX(1.5);
+    }
+    40% {
+      transform: scaleX(1);
+      opacity: .7;
+    }
+    100% {
+      transform: scaleX(.2);
+      opacity: .4;
+    }
+  }
+  
+  .circle-animation {
+    @apply absolute w-5 h-5 bg-white rounded-full left-[15%];
+    animation: circle7124 .5s alternate infinite ease;
+  }
+  
+  .circle-animation:nth-child(2) {
+    left: 45%;
+    animation-delay: .2s;
+  }
+  
+  .circle-animation:nth-child(3) {
+    right: 15%;
+    left: auto;
+    animation-delay: .3s;
+  }
+  
+  .shadow-animation {
+    @apply absolute w-5 h-1 rounded-full bg-black bg-opacity-90 top-[62px] left-[15%] filter blur-sm;
+    animation: shadow046 .5s alternate infinite ease;
+    z-index: -1;
+  }
+  
+  .shadow-animation:nth-child(4) {
+    left: 45%;
+    animation-delay: .2s;
+  }
+  
+  .shadow-animation:nth-child(5) {
+    right: 15%;
+    left: auto;
+    animation-delay: .3s;
+  }
