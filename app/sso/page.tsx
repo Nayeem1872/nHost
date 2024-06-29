@@ -1,12 +1,12 @@
 "use client";
 import axios from "axios";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 
-const nIamSSO = () => {
+const NiamSSO = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const queryParams = new URLSearchParams(searchParams.toString());
@@ -23,7 +23,7 @@ const nIamSSO = () => {
     }
   }, [searchParams, pathname]);
 
-  const post = async (token: any) => {
+  const post = async (token:any) => {
     try {
       const postData = {
         token: token,
@@ -34,12 +34,9 @@ const nIamSSO = () => {
       const response = await axios.post("/api/niamsso", postData);
 
       console.log(response.data);
-      if(response?.data?.success===true){
-        
-        router.push("/dashboard")
+      if(response?.data?.success === true){
+        router.push("/dashboard");
       }
-
-    
     } catch (error) {
       console.error("Error while posting token:", error);
     }
@@ -56,7 +53,13 @@ const nIamSSO = () => {
         <div className="shadow-animation"></div>
       </div>
     </div>
-  )
+  );
 };
 
-export default nIamSSO;
+const SSOPage = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <NiamSSO />
+  </Suspense>
+);
+
+export default SSOPage;
