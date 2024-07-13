@@ -6,7 +6,7 @@ const nextConfig = {
       return [
         {
           source: "/api/:path*",
-          destination: "https://not-notify-fishing-borough.trycloudflare.com/api/:path*",
+          destination: "https://sky-index-utilization-volvo.trycloudflare.com/api/:path*",
         
         },
       ];
