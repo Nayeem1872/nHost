@@ -40,7 +40,7 @@ export default function Home() {
     }
   };
   const handleLoginWithNIam = () => {
-    router.push("https://remote-connection-backend.onrender.com/sso?next=http://192.168.0.109:3001");
+    router.push("http://dev.nnur.ca/sso?next=http://192.168.0.109:3001");
     // router.push("/niamsso?token=54545448685464564"); 
   };
 
