@@ -6,7 +6,7 @@ const nextConfig = {
       return [
         {
           source: "/api/:path*",
-          destination: "https://composition-infinite-enrolled-checkout.trycloudflare.com/api/:path*",
+          destination: "https://latino-wax-unfortunately-recognised.trycloudflare.com/api/:path*",
         
         },
       ];
