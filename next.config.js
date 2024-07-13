@@ -6,7 +6,7 @@ const nextConfig = {
       return [
         {
           source: "/api/:path*",
-          destination: "https://not-notify-fishing-borough.trycloudflare.com/:path*",
+          destination: "https://not-notify-fishing-borough.trycloudflare.com/api/:path*",
         
         },
       ];
