@@ -6,7 +6,7 @@ const nextConfig = {
       return [
         {
           source: "/api/:path*",
-          destination: "https://disappointed-store-glory-broadband.trycloudflare.com/api/:path*",
+          destination: "https://cables-watched-delivery-sci.trycloudflare.com/api/:path*",
         
         },
       ];
